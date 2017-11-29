@@ -1,0 +1,424 @@
+/*
+* @Author: PC
+* @Date:   2017-11-09 12:33:33
+* @Last Modified by:   PC
+* @Last Modified time: 2017-11-10 08:35:18
+*/
+/* 购物中心 */
+.center{
+	width: 101px;
+	height: 101px;
+	position: fixed;
+	right: 30px;
+	top:50px;
+	z-index:10;
+}
+/* 向下活动 */
+.down{
+	width: 174px;
+	height: 61px;
+	position:fixed;
+	right:30px;
+	bottom:50px;
+	z-index:10;
+	/* 调用动画 */
+	animation:down 1s linear infinite alternate;
+}
+/* 为向下图片做动画运动 */
+@keyframes down{
+	form{
+		bottom:50px;
+	}
+	to{
+		bottom:70px;
+	}
+}
+
+.w{
+	width: 990px;
+	height: 100%;
+	margin:0 auto;
+	position: relative;
+}
+
+/* 第一屏 */
+.screen01{
+	background:url("../img/01-bg.png") no-repeat bottom;
+}
+/* 设置fly图片的样式 */
+.screen01 .fly{
+	width: 470px;
+	height: 50px;
+	position:absolute;
+	left: 50%;
+	margin-left:-235px;
+	bottom:550px;
+	/* 调用动画 */
+	animation:fly 1s linear infinite alternate;
+}
+/* 设置fly的动画 */
+@keyframes fly{
+	from{
+		bottom:550px;
+	}
+	to{
+		bottom:570px;
+	}
+}
+
+.screen01 .sofa{
+	width: 134px;
+	height: 147px;
+	position: absolute;
+	left: 50%;
+	top:150px;
+	margin-left: -250px;
+	/* 调用动画 */
+	animation:sofa 0.8s 0.2s linear infinite alternate;
+}
+
+/* 设置sofa动画 */
+@keyframes sofa{
+	form{
+		top:150px;
+	}
+	to{
+		top:170px;
+	}
+}
+
+/* 设置商品样式 */
+.screen01 .goods{
+	width:824px;
+	height:274px;
+	position:absolute;
+	left: 50%;
+	bottom:130px;
+	margin-left: -412px;
+}
+
+/* 第二屏 */
+/* 第二屏背景图片 */
+.screen02{
+	background: url("../img/02-bg.png") no-repeat bottom;
+}
+
+/* 设置文字样式 */
+.screen02 .text{
+	width: 363px;
+	height: 27px;
+	position: absolute;
+	left: 50%;
+	top:50px;
+	transform:translate(-50%);
+}
+/* 设置搜索框的样式 */
+.screen02 .search_box{
+	width: 222px;
+	height: 45px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left: 311px;
+	opacity: 0;
+}
+
+/* 搜索框的动画 */
+.animated .screen02 .search_box{
+	animation:search_box 4s linear forwards;
+
+}
+
+@keyframes search_box{
+	form{
+		top:50px;
+		margin-left:311px;
+		opacity: 0;
+		transform:scale(1);
+	}
+
+	25%{
+		top:50%;
+		margin-left: -111px;
+		opacity: 1;
+		transform:scale(1);
+	}
+	75%{
+		top:50%;
+		transform:scale(1);
+		margin-left: -111px;
+		opacity: 1;
+	}
+	to{
+		top:175px;
+		margin-left: 83px;
+		transform:scale(0.8);
+		opacity: 1;
+	}
+}
+
+
+
+
+/* 设置文字样式 */
+.screen02 .search_box img:last-child{
+	position:absolute;
+	top:5px;
+	left:70px;
+	opacity: 0;
+}
+/* 文字动画 */
+.animated .screen02 .search_box img:last-child{
+	animation:key 2s 1s linear forwards;
+}
+@keyframes key{
+	form{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+/* 设置商品的样式 */
+.screen02 .goods{
+	width: 441px;
+	height: 218px;
+	position: absolute;
+	left: 50%;
+	margin-left: -230px;
+	top: 50%;
+	margin-top:-100px;
+	/* 设置进行变换的坐标点 */
+	transform-origin:right bottom;
+	transform:scale(0);
+}
+/* 设置商品动画 */
+.animated .screen02 .goods{
+	animation:goods 1s 3s linear forwards;
+}
+@keyframes goods{
+	form{
+		transfrom:scale(0);
+	}
+	to{
+		transform:scale(1);
+	}
+}
+
+/* 设置隐藏的沙发样式 */
+.screen02 .hide{
+	position: absolute;
+	left:50%;
+	margin-left:-170px ;
+	transform:scale(0.5);
+	top:200px;
+	opacity: 0;
+	/* display: none; */
+	z-index: 10;
+}
+/* 隐藏沙发动画---从第二个屏屏运动到第一个屏的动画 */
+.screen02 .hide.animate{
+	animation:screen02_screen03 1.5s linear forwards;
+}
+@keyframes screen02_screen03{
+	form{
+		opacity: 1;
+		/* display: none; */
+		top: 200px;
+		margin-left: -170px;
+		transfrom:scale(0.5);
+	}
+	to{
+		opacity: 1;
+		/* display: block; */
+		top:860px;
+		margin-left: -235px;
+		transform:scale(1);
+	}
+}
+
+/* 第三屏 */
+/* 设置背景图片 */
+.screen03{
+	background:url("../img/03-bg.png") no-repeat;
+}
+/* 设置size中样式 */
+.screen03 .size {
+	width: 296px;
+	height: 131px;
+	position: absolute;
+	left:50%;
+	margin-left: 40px;
+	top:50%;
+	margin-top:-30px;
+}
+.screen03 .size img{
+	position: absolute;
+}
+.screen03 .size img:last-child{
+	display: none;
+}
+
+/* 设置加入购物车图标 */
+.screen03 .cart{
+	width: 218px;
+	height: 58px;
+	position:absolute;
+	left: 50%;
+	margin-left: 40px;
+	top:50%;
+	margin-top: 110px;
+}
+.screen03 .cart img{
+	position:absolute;
+}
+.screen03 .cart img:last-child{
+	display: none;
+}
+
+/* 设置沙发的样式 */
+.screen03 .hsofa{
+	width: 207px;
+	height: 166px;
+	position: absolute;
+	left:50%;
+	margin-left:-235px;
+	top:195px;
+	opacity: 0;
+	z-index: 10;
+
+}
+/* 设置沙发动画 */
+.screen03 .hsofa.animate{
+	animation:screen03_screen04 1.5s linear;
+}
+@keyframes screen03_screen04{
+	from{
+		opacity: 1;
+		top:200px;
+		margin-left: -235px;
+	}
+	to{
+		opacity: 1;
+		top:886px;
+		margin-left: -45px;
+	}
+}
+
+/* 第四屏 */
+.screen04 {
+	background:url("../img/04-bg.png") no-repeat bottom;
+}
+.screen04{
+	width: 100%;
+}
+
+/* 设置白云样式 */
+.screen04 .cloud{
+	width: 882px;
+	height: 120px;
+	position: absolute;
+	left:50%;
+	margin-left: -500px;
+	top:15px;
+}
+/* 设置白云的动画 */
+.screen04 .cloud.animate{
+	animation:cloud 10s linear infinite alternate;
+}
+@keyframes cloud{
+	from{
+		margin-left: -500px;
+	}
+	to{
+		margin-left: 80px;
+	}
+}
+
+/* 设置text样式 */
+.screen04 .text{
+	width: 429px;
+	height: 31px;
+	position: absolute;
+	left:50%;
+	margin-left: -250px;
+	top:50%;
+	margin-top: -190px;
+}
+.screen04 .text img{
+	position: absolute;
+}
+.screen04 .text img:last-child{
+	display: none;
+}
+
+/* 设置address样式 */
+.screen04 .address{
+	width: 283px;
+	height: 270px;
+	position:absolute;
+	left: 50%;
+	margin-left: -178px;
+	top:50%;
+	margin-top:-122px;
+	display: none;
+}
+.screen04 .address img{
+	position: absolute;
+}
+.screen04 .address img:last-child{
+	left: 30px;
+	top: 60px;
+	/* display: none; */
+}
+
+/* 设置购物车样式 */
+.screen04 .cart{
+	width: 407px;
+	height: 346px;
+	position: absolute;
+	left:50%;
+	margin-left: -190px;
+	bottom:40px;
+
+}
+.screen04 .cart .car{
+	position: absolute;
+	z-index: 10;
+}
+/* 为购物车设置动画 */
+.screen04 .cart.animate{
+	animation:cart 2s linear forwards;
+}
+@keyframes cart{
+	from{
+		margin-left: -190px
+	}
+	to{
+		margin-left: 800px;
+	}
+}
+
+/* 设置隐藏沙发 */
+.screen04 .cart .hsofa{
+	width: 204px;
+	height: 198px;
+	position: absolute;
+	left:50%;
+	margin-left: -45px;
+	top:50%;
+	margin-top: -220px;
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
